@@ -8,30 +8,30 @@
     <title>Cadastro</title>
 </head>
 <body>
-<div class="containner">
-      <form>
 
-        <h1>
-            Cadastra-se
-        </h1>
-        <div class="box-containner">
-            <input type="text" placeholder="Nome" required>
-        </div>
-        <div class="box-containner">
-            <input type="email" placeholder="Email" required>
-        </div>
-        <div class="box-containner">
-            <input type="password" placeholder="Senha" required>
-            <input type="checkbox" id="check"><span id="termo">Politica de Privacidade</span>
+<div class="container">
+    <form>
+        <h1>Cadastre-se</h1>
+
+        <div class="box-container">
+            <input type="text" placeholder="Nome" required autocomplete="off">
         </div>
 
+        <div class="box-container">
+            <input type="email" placeholder="Email" required autocomplete="off">
+        </div>
+
+        <div class="box-container">
+            <input type="password" placeholder="Senha" required autocomplete="off">
+        </div>
+
+        <div class="box-container">
+            <input type="checkbox" id="check" required>
+            <label for="check" id="termo">Política de Privacidade</label>
+        </div>
 
         <button type="submit" class="btn-submit">Enviar</button>
-
-
-
-      </form>
-
+    </form>
 </div>
 
 </body>

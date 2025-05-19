@@ -8,33 +8,31 @@
     <title>Login</title>
 </head>
 <body>
-<div class="containner login">
-      <form>
 
-        <h1>
-            Login
-        </h1>
-        <div class="box-containner">
-            <input type="text" placeholder="Email" required>
+<div class="container login">
+    <form>
+        <h1>Login</h1>
+
+        <div class="box-container">
+            <input type="text" placeholder="Email" required autocomplete="off">
             <img width="20" height="20" src="https://img.icons8.com/ios-filled/50/ffffff/user--v1.png" alt="user"/>
         </div>
 
-        <div class="box-containner">
-            <input type="password" placeholder="Senha" required>
-         <img width="20" height="20" src="https://img.icons8.com/material/24/ffffff/lock--v1.png" alt="lock"/>
-         <a href="#">Esqueci minha senha</a>
+        <div class="box-container">
+            <input type="password" placeholder="Senha" required autocomplete="off">
+            <img width="20" height="20" src="https://img.icons8.com/material/24/ffffff/lock--v1.png" alt="lock"/>
+        </div>
+
+        <div class="box-container">
+            <a href="#">Esqueci minha senha</a>
         </div>
 
         <button type="submit" class="btn-submit">Enviar</button>
 
         <div class="register">
-            <p>
-                Não está cadastrado  ? <a href="{{ route('cadastro') }}">Cadastrar</a>
-            </p>
+            <p>Não está cadastrado? <a href="{{ route('cadastro') }}">Cadastrar</a></p>
         </div>
-
-      </form>
-
+    </form>
 </div>
 
 </body>
