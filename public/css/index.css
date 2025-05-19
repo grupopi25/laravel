@@ -116,6 +116,11 @@ main h1 {
   color: #2D003D;
 }
 
+.pet{
+    width: 30px;
+    height: 30px;
+}
+
 @media (max-width: 768px) {
   header {
     padding: 0 30px;
@@ -157,7 +162,7 @@ main h1 {
   }
 
   ul {
-   
+
     gap: 10px;
   }
 
