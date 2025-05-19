@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function login(){
+    public function index(){
         return view('user.login');
     }
 
@@ -25,9 +25,9 @@ class LoginController extends Controller
             return redirect()->intended('home')->with('success','Seja Bem-Vindo!');
         }
           return back()->withInput()->with('error','Usuário não Encontrado no banco de dados!');
+    }
 
-
-
-
+    public function logout(){
+        
     }
 }
