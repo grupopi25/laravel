@@ -8,3 +8,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[HomeController::class,'index'])->name('home');
 Route::get('/login',[LoginController::class,'login'])->name('login');
 Route::get('/cadastro',[CadastroUserController::class,'create'])->name('cadastro');
+Route::post('/store-user',[CadastroUserController::class,'store'])->name('store-user');
