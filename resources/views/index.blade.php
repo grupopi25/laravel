@@ -1,4 +1,4 @@
-@extends('layouts.apresentacao')
+@extends('layouts.index')
 
 @section('header')
 <header>
