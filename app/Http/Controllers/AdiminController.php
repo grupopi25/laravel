@@ -8,8 +8,10 @@ use Illuminate\Http\Request;
 class AdiminController extends Controller
 {
    public function dashboard(){
-    return view('site/admin/index');
-   }
+    $totalClientes = Cliente::count();
+    return view('site.admin.index', compact('totalClientes'));
+}
+
    public function pets(){
     return view('site/admin/pets');
    }

@@ -12,7 +12,7 @@
             <div class="card">
                 <span class="material-symbols-outlined">group</span>
                 <h2>Clientes</h2>
-                <p>128</p>
+                <p>{{ $totalClientes }}</p>
             </div>
 
             <div class="card">
