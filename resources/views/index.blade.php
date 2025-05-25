@@ -17,7 +17,7 @@
 @section('content')
 <main>
     <h1>
-        <img width="24" height="24" src="https://img.icons8.com/android/24/cat-footprint.png" alt="cat-footprint"/>
+        <i class="material-symbols-outlined">pets</i>
          Cuide de quem te ama <br>
         sem dizer uma <span class="destaque">palavra</span>!
     </h1>
