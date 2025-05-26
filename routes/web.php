@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdiminController;
 use App\Http\Controllers\CadastroUserController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\HomeUser\PetController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
@@ -26,10 +27,25 @@ Route::prefix('admin')->group(function(){
     Route::get('/mensage',[AdiminController::class,'mensage'])->name('adm.mensage');
     Route::get('/doctors',[AdiminController::class,'doctors'])->name('adm.doctors');
     Route::get('/finance',[AdiminController::class,'finance'])->name('adm.finance');
+ 
+    Route::get('/pets', [AdiminController::class, 'pets'])->name('adm.pets');
+    Route::get('/pets/create', [AdiminController::class, 'createPet'])->name('adm.pets.create');
+    Route::post('/pets', [AdiminController::class, 'storePet'])->name('adm.pets.store');
 });
 
 
+   // para pets
 
+Route::middleware(['auth'])->group(function() {
+
+    Route::get('/pets', [PetController::class, 'index'])->name('pets.index');
+    Route::get('/pets/create', [PetController::class, 'create'])->name('pets.create');
+    Route::post('/pets/store', [PetController::class, 'store'])->name('pets.store');
+    Route::get('/pets/{pet}/edit', [PetController::class, 'edit'])->name('pets.edit');
+    Route::put('/pets/{pet}', [PetController::class, 'update'])->name('pets.update');
+    Route::delete('/pets/{pet}', [PetController::class, 'destroy'])->name('pets.destroy');
+
+});
 
 
 

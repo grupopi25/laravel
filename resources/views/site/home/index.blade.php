@@ -19,12 +19,13 @@
         </header>
     </aside>
     <main class="main-content">
-        <h1>Painel Administrativo</h1>
+        @yield('content')
+        
     </main>
     
-    PRINCIPAL NAO MECHER
+ 
       
-    @yield('content')
+    
       
 
     <script src="{{ asset('js/script.js') }}"></script>

@@ -51,4 +51,9 @@ class User extends Authenticatable
     {
          return $this->belongsTo(Cliente::class, 'cliente_id');
     }
+    public function pets()
+    {
+        return $this->hasMany(Pet::class);
+    }
+
 }
