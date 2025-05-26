@@ -28,42 +28,8 @@ if (darkMode) {
 }
 
 // ================= Preenchimento da Tabela ===================
-const Orders = [
-    {
-        productName: 'JavaScript Tutorial',
-        productNumber: '85743',
-        paymentStatus: 'Due',
-        status: 'Pending'
-    },
-    {
-        productName: 'CSS Full Course',
-        productNumber: '97245',
-        paymentStatus: 'Refunded',
-        status: 'Declined'
-    },
-    {
-        productName: 'Flex-Box Tutorial',
-        productNumber: '36452',
-        paymentStatus: 'Paid',
-        status: 'Active'
-    },
-];
 
-const tableBody = document.querySelector('table tbody');
-if (tableBody) {
-    Orders.forEach(order => {
-        const tr = document.createElement('tr');
-        const trContent = `
-            <td>${order.productName}</td>
-            <td>${order.productNumber}</td>
-            <td>${order.paymentStatus}</td>
-            <td class="${order.status === 'Declined' ? 'danger' : order.status === 'Pending' ? 'warning' : 'success'}">${order.status}</td>
-            <td class="primary">Detalhes</td>
-        `;
-        tr.innerHTML = trContent;
-        tableBody.appendChild(tr);
-    });
-}
+
 
 // ================= Sistema de Lembretes ===================
 const openFormBtn = document.getElementById('openForm');
