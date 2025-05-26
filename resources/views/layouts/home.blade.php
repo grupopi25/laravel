@@ -1,92 +1,98 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <link rel="stylesheet" href="{{ asset('css/admin/index.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/admin/clientes.css') }}">
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="{{ asset('css/admin/adm.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/admin/clientes.css') }}" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet" />
 
-    <title>@yield('title')</title>
+
+    <title>@yield('title', 'Perfil do Cliente')</title>
 </head>
+
 <body>
-<aside class="navbar-header">
-        <header class="corpo">
-             <div class="logo">
-               
-                <img src="{{ asset('assets/logo-branco-1.png') }}" alt="">
-            </div>
-            <hr>
-
-            <div class="box-icons">
-                <a href="{{ route('adm.dashboard') }}" class="icons">
-                    <i class="material-symbols-outlined">home</i>
-                    <span>Home</span>
-                </a>
+    {{-- NavBar --}}
+    <div class="container">
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <img src="{{ asset('assets/logo-vermelho.png') }}" alt="Logo Clínica Veterinária" />
+                    <h2>Clínica<span class="danger">Vet</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">close</span>
+                </div>
             </div>
 
-            <div class="box-icons">
-                <a  href="{{ route('adm.clients') }}" class="icons ">
-                    <i class="material-symbols-outlined">group</i>
-                    <span>Clientes</span>
+            <div class="sidebar">
+                <a href="{{ route('adm.dashboard') }}"
+                    class="{{ request()->routeIs('adm.dashboard') ? 'active' : '' }}">
+                    <span class="material-icons-sharp">dashboard</span>
+                    <h3>Dashboard</h3>
                 </a>
-            </div>
 
-            <div class="box-icons">
-                <a href="{{ route('adm.pets') }}" class="icons">
-                    <i class="material-symbols-outlined">pets</i>
-                    <span>Pets</span>
+                <a href="{{ route('adm.pets') }}" class="{{ request()->routeIs('adm.pets') ? 'active' : '' }}">
+                    <span class="material-icons-sharp">pets</span>
+                    <h3>Pets</h3>
                 </a>
-            </div>
 
-            <div class="box-icons">
-                <a href="{{ route('adm.service') }}" class="icons">
-                    <i class="material-symbols-outlined">concierge</i>
-                    <span>Serviços</span>
+                <a href="{{ route('adm.clients') }}" class="{{ request()->routeIs('adm.clients') ? 'active' : '' }}">
+                    <span class="material-icons-sharp">person_outline</span>
+                    <h3>Clientes</h3>
                 </a>
-            </div>
 
-            <div class="box-icons">
-                <a  href="{{ route('adm.mensage') }}" class="icons">
-                    <i class="material-symbols-outlined">mail</i>
-                    <span>Mensagens</span>
+                <a href="{{ route('adm.mensage') }}" class="{{ request()->routeIs('adm.mensage') ? 'active' : '' }}">
+                    <span class="material-icons-sharp">mail_outline</span>
+                    <h3>Mensagens</h3>
+                    <span class="message-count">5</span>
                 </a>
-            </div>
 
-            <div class="box-icons">
-                <a  href="{{ route('adm.doctors') }}" class="icons">
-                    <i class="material-symbols-outlined">stethoscope</i>
-                    <span>Doutores</span>
+                <a href="{{ route('adm.service') }}" class="{{ request()->routeIs('adm.service') ? 'active' : '' }}">
+                    <span class="material-icons-sharp">construction</span>
+                    <h3>Serviços</h3>
                 </a>
-            </div>
 
-            <div class="box-icons">
-                <a  href="{{ route('adm.finance') }}" class="icons">
-                    <i class="material-symbols-outlined">bar_chart</i>
-                    <span>Finanças</span>
+                <a href="#">
+                    <span class="material-icons-sharp">event</span>
+                    <h3>Agendamentos</h3>
                 </a>
-            </div>
 
-            <div class="box-icons logout">
-                <a  href="#" class="icons">
-                    <i class="material-symbols-outlined">logout</i>
-                    <span>Sair</span>
+                <a href="#">
+                    <span class="material-icons-sharp">medical_services</span>
+                    <h3>Atendimentos</h3>
+                </a>
+
+                <a href="{{ route('adm.doctors') }}" class="{{ request()->routeIs('adm.doctors') ? 'active' : '' }}">
+                    <span class="material-icons-sharp">local_hospital</span>
+                    <h3>Veterinários</h3>
+                </a>
+
+                <a href="{{ route('adm.finance') }}" class="{{ request()->routeIs('adm.finance') ? 'active' : '' }}">
+                    <span class="material-icons-sharp">attach_money</span>
+                    <h3>Financeiro</h3>
+                </a>
+
+                <a href="#">
+                    <span class="material-icons-sharp">settings</span>
+                    <h3>Configurações</h3>
+                </a>
+
+                <a href="#">
+                    <span class="material-icons-sharp">logout</span>
+                    <h3>Logout</h3>
                 </a>
             </div>
-        </header>
-    </aside>
-    <main class="main-content">
-        <h1>Painel Administrativo</h1>
-    </main>
-    
-      
-    @yield('content')
-      
+        </aside>
+
+        @yield('content')
+
+    </div>
 
     <script src="{{ asset('js/script.js') }}"></script>
-
 </body>
+
 </html>

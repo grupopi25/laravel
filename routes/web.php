@@ -8,7 +8,6 @@ use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/',[WelcomeController::class,'index'])->name('welcome');
-
 Route::get('/home',[HomeController::class,'home'])->name('home');
 
 
@@ -28,6 +27,9 @@ Route::prefix('admin')->group(function(){
     Route::get('/doctors',[AdiminController::class,'doctors'])->name('adm.doctors');
     Route::get('/finance',[AdiminController::class,'finance'])->name('adm.finance');
 });
+
+
+
 
 
 
