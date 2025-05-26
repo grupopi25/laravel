@@ -22,12 +22,14 @@ class CadastroUserController extends Controller
                 'name' => $request->name,
                 'email' => $request->email,
                 'password' => Hash::make($request->password), 
+                'telefone' => $request->telefone,
             ]);
 
             
             $cliente = Cliente::create([
                 'nome' => $request->name,
                 'email' => $request->email,
+                'telefone' => $request->telefone,
             ]);
 
             

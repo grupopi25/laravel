@@ -23,6 +23,9 @@
         <div class="box-container">
             <input type="email" placeholder="Email" name="email" required autocomplete="off" value="{{ old('email') }}">
         </div>
+        <div class="box-container">
+            <input type="tel" placeholder="Seu telefone para contato" name="telefone" required autocomplete="off" value="{{ old('telefone') }}">
+        </div>
 
         <div class="box-container">
            <input type="password" placeholder="Senha" name="password" required autocomplete="off" value="{{ old('password') }}">
