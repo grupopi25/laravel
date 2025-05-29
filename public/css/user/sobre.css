@@ -1,0 +1,42 @@
+body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            max-width: 800px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .image-section, .text-section {
+            width: 50%;
+            padding: 20px;
+        }
+        .image-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #eef2f3;
+        }
+        .image-section img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .text-section {
+            text-align: center;
+        }
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+        .clinvet {
+            color: purple;
+            font-weight: bold;
+        }

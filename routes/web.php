@@ -18,5 +18,6 @@ Route::get('/login',[LoginController::class,'index'])->name('login');
 Route::post('/auth',[LoginController::class,'authenticate'])->name('user-login');
 Route::post('/logout',[LoginController::class,'logout'])->name('user-logout');
 
+Route::get('/cadastroPet',[CadastroUserController::class,'cad'])->name('cadastro');
 
 

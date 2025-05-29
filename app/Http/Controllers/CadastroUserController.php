@@ -29,4 +29,8 @@ class CadastroUserController extends Controller
 
      }
 
+     public function cad(){
+        return view('user.cadastroPet');
+    }
+
 }
