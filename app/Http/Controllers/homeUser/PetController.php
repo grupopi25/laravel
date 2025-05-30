@@ -10,21 +10,21 @@ use Illuminate\Support\Facades\Auth;
 
 class PetController extends Controller
 {
-    // Listar pets do usuário autenticado
+   
     public function index()
     {
         $pets = Pet::where('user_id', Auth::id())->with('client')->get();
-        return view('site.user.pets.index', compact('pets'));
+        return view('user.cadastrarPet', compact('pets'));
     }
 
-    // Mostrar formulário de cadastro
+ 
     public function create()
     {
         $clients = Cliente::all();
         return view('user.cadastrarPet', compact('clients'));
     }
 
-    // Salvar pet no banco
+  
 public function store(Request $request)
 {
     $request->validate([
@@ -40,15 +40,15 @@ public function store(Request $request)
         'gender' => $request->gender,
         'birth_date' => $request->birth_date,
         'weight' => $request->weight,
-        'client_id' => Auth::id(), // Cliente é o usuário logado
-        'user_id' => Auth::id(),   // Usuário também
+        'client_id' => Auth::id(), 
+        'user_id' => Auth::id(),   
     ]);
 
     return redirect()->route('pets.index')->with('success', 'Pet cadastrado com sucesso!');
 }
 
 
-    // Formulário de edição
+
     public function edit(Pet $pet)
     {
         if ($pet->user_id != Auth::id()) {
@@ -59,7 +59,7 @@ public function store(Request $request)
         return view('site.user.pets.edit', compact('pet', 'clients'));
     }
 
-    // Atualizar pet
+ 
     public function update(Request $request, Pet $pet)
     {
         if ($pet->user_id != Auth::id()) {
@@ -86,7 +86,7 @@ public function store(Request $request)
         return redirect()->route('pets.index')->with('success', 'Pet atualizado com sucesso!');
     }
 
-    // Deletar pet
+    
     public function destroy(Pet $pet)
     {
         if ($pet->user_id != Auth::id()) {
