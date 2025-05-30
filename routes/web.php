@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[WelcomeController::class,'index'])->name('welcome');
 Route::get('/home',[HomeController::class,'home'])->name('home');
+Route::get('/sobre',[HomeController::class,'sobre'])->name('sobre');
+
 
 
 Route::get('/cadastro',[CadastroUserController::class,'index'])->name('cadastro');
