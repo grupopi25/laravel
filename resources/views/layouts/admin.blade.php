@@ -5,9 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
-    <link rel="stylesheet" href="{{ asset('css/admin/adm.css') }}" />
-    <link rel="stylesheet" href="{{ asset('css/admin/clientes.css') }}" />
+    @vite(['resources/css/admin/adm.css', 'resources/js/script.js'])
+    @vite(['resources/css/admin/clientes.css', 'resources/js/script.js'])
+    @vite([ 'resources/js/animais.js'])
+   
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet" />
 
 
@@ -81,18 +82,19 @@
                     <h3>Configurações</h3>
                 </a>
 
-                <a href="#">
+                <a href="">
                     <span class="material-icons-sharp">logout</span>
                     <h3>Logout</h3>
                 </a>
             </div>
         </aside>
+        
 
         @yield('content')
 
     </div>
 
-    <script src="{{ asset('js/script.js') }}"></script>
+    
 </body>
 
 </html>

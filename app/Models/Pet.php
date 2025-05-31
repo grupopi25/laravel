@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use App\Models\User; 
 class Pet extends Model
 {
     use HasFactory;
@@ -22,10 +22,10 @@ class Pet extends Model
     ];
 
     // Relação com o dono (cliente)
-    public function client()
-    {
-        return $this->belongsTo(Cliente::class);
-    }
+  public function cliente()
+{
+    return $this->belongsTo(User::class, 'user_id');
+}
 
     // Relação com o usuário (quem cadastrou ou atende)
     public function user()

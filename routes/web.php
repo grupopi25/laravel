@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[WelcomeController::class,'index'])->name('welcome');
 Route::get('/home',[HomeController::class,'home'])->name('home');
 Route::get('/sobre',[HomeController::class,'sobre'])->name('sobre');
+Route::get('/dashboard',[HomeController::class,'dashboard'])->name('dashboard');
+Route::get('/logout',[HomeController::class,'logout'])->name('logout');
 
 
 
@@ -29,8 +31,9 @@ Route::prefix('admin')->group(function(){
     Route::get('/mensage',[AdiminController::class,'mensage'])->name('adm.mensage');
     Route::get('/doctors',[AdiminController::class,'doctors'])->name('adm.doctors');
     Route::get('/finance',[AdiminController::class,'finance'])->name('adm.finance');
+    
  
-    Route::get('/pets', [AdiminController::class, 'pets'])->name('adm.pets');
+    Route::get('/admin/pets', [AdiminController::class, 'pets'])->name('adm.pets');
     Route::get('/pets/create', [AdiminController::class, 'createPet'])->name('adm.pets.create');
     Route::post('/pets', [AdiminController::class, 'storePet'])->name('adm.pets.store');
 });
